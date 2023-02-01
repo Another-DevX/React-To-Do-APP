@@ -1,0 +1,13 @@
+.Todo-Title{
+    font-family: 'Courier Prime', monospace;
+    font-size: 54px;
+    color: white;
+    transition: 300ms ease-out;
+    border-bottom: 5px solid transparent;
+    cursor: default;
+}
+
+.Todo-Title:hover{
+    border-color: rgb(255, 255, 255);
+    
+}

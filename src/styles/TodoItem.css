@@ -1,0 +1,80 @@
+.ContainerTodo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+    max-width: 420px;
+    min-width: 280px;
+    height: 60px;
+    margin: 20px;
+    background-color: rgb(221, 221, 221);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;    
+    transition: 0.2s linear;
+    cursor: pointer;
+}
+
+.ContainerTodo:hover{
+    background-color: rgb(199, 199, 199);
+    transform: translateY(-7px);
+}
+
+.TodoText{
+    margin-left: 45px;
+}
+
+.icon{
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.icon-check{
+    position: absolute;
+    left: 1%;
+    transition: all 0.1s ease;
+
+    width: 40px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+.icon-check:hover{
+    font-size: 25px;
+    transform: translateY(-3px);
+    color: green;
+}
+
+.icon-remove{
+   position: absolute;
+   right: 5%; 
+   transition: all 0.25s ease-out;
+   width: 40px;
+   height: 60px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+}
+
+.icon-remove:hover{
+    transform: rotate(180deg);
+    color: rgb(138, 5, 5);
+
+}
+
+.checked-text{
+    text-decoration: line-through;
+}
+
+.checked-icon{
+    color: green;
+}
+
+.checked-background{
+    background-color: rgb(121, 121, 121);
+}

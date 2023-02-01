@@ -5,9 +5,27 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: rgb(69,58,180); */
+  /* background: linear-gradient(#3eae42, #00b57f, #00b7b3, #00b6d9, #00b1ea, #44ade8, #60a9e5, #75a5e0, #69a3da, #5da0d4, #529ece, #479bc7); */
+  
+  background: linear-gradient(
+    217deg,
+    rgba(255, 0, 0, 0.8),
+    rgba(255, 0, 0, 0) 70.71%
+  ), linear-gradient(127deg, rgba(7, 96, 148, 0.8), rgba(0, 255, 0, 0) 70.71%),
+  linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+/* background-image: linear-gradient(to right bottom, #3eae42, #00b57f, #00b7b3, #00b6d9, #00b1ea, #44ade8, #60a9e5, #75a5e0, #69a3da, #5da0d4, #529ece, #479bc7); */
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+  
 }
