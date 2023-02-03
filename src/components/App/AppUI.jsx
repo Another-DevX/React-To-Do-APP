@@ -1,6 +1,4 @@
 import './App.css';
-import "animate.css"
-
 import React, { useState } from "react";
 import { TodoCounter } from '../TodoCounter/TodoCounter';
 import { TodoItem } from "../TodoItem/TodoItem";
@@ -49,7 +47,7 @@ function AppUI(){
         </TodoList>
         {openModal && (
           <Modal>
-            <TodoForm className="animate__animated animate__bounce"/>
+            <TodoForm />
           </Modal>
         )}
         <CreateTodoButton />
