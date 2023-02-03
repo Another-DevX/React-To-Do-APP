@@ -1,0 +1,73 @@
+.todo-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 350px;
+    border-radius: 5px;
+    background-color: rgb(182, 180, 180);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.todo-text-form{
+    background-color: white;
+    border: 0;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    height: 100px;    
+    width: 300px;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-top: 10px;
+}
+
+.btn-form{
+    border: 0;
+    width: 100%;
+    height: 30px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    color: white;
+    font-size: 16px;
+    transition: 0.05s ease-in-out;
+}
+
+.btn-form:hover{
+    width: 200%;
+}
+
+.btn-form:active{
+    border: 2px solid white;
+}
+
+.add-btn{
+    border-bottom-left-radius: 5px;
+    background-color: rgb(44, 170, 60);
+
+}
+
+.cancel-btn{
+    border-bottom-right-radius: 5px;
+    background-color: rgb(194, 50, 50);
+
+
+}
+
+.todo-container-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-title{
+    font-size: 18px;
+    color: black;
+}
+.btn-container-modal{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+

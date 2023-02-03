@@ -13,25 +13,41 @@ function TodoProvider(props){
     loading,
     error
     } = useLocalStorage('TODO_V1', []); 
+
+    const [openModal, setOpenModal] = React.useState(false);
+
     //React hook to search values
     const [searchValue, setSearchValue] = React.useState('');
+
     //Iter in all todos, and find the object that includes a part of the search
     const todoInSearch = todos.filter(todo => todo.text.toLowerCase().includes(searchValue.toLowerCase()))  
     const totalTodos = todos.length;    
     const completedTodos = todos.filter(todo => !!todo.completed).length;   
+
     //Search the index of the object that calls this function, and call the hook of useLocalStorage
     //with saveTodos method
     const toggleCompletedToDos = (todoObject) => {
-    const todoIndex = todos.findIndex(todo => todo === todoObject);
-    const newItem = [...todos];
-    newItem[todoIndex].completed = !newItem[todoIndex].completed;
-    saveTodos(newItem);
+        const todoIndex = todos.findIndex(todo => todo === todoObject);
+        const newItem = [...todos];
+        newItem[todoIndex].completed = !newItem[todoIndex].completed;
+        saveTodos(newItem);
     }
+
     const removeToDos = (todoObject) => {
-    const todoIndex = todos.findIndex(todo => todo === todoObject);
-    const newItem = [...todos];
-    newItem.splice(todoIndex,1);
-    saveTodos(newItem);
+        const todoIndex = todos.findIndex(todo => todo === todoObject);
+        const newItem = [...todos];
+        newItem.splice(todoIndex,1);
+        saveTodos(newItem);
+    }
+
+    const addTodo = (text) => {
+        const newItem = [...todos];
+        newItem.push({
+            completed: false,
+            text
+        });
+        saveTodos(newItem)
+
     }
 
     //Initialize the variable of searchedTodos with a void array
@@ -57,7 +73,10 @@ function TodoProvider(props){
     setSearchValue,
     searchedTodos,
     toggleCompletedToDos,
-    removeToDos 
+    removeToDos ,
+    addTodo,
+    openModal,
+    setOpenModal
     }}>
         {props.children}
     </TodoContext.Provider>

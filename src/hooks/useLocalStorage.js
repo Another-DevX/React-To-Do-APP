@@ -9,28 +9,26 @@ function useLocalStorage(itemName, initialValue){
     const [item, setItem] = React.useState(initialValue);
 
     React.useEffect(() => {
-       
         setTimeout(()=>{
             try{
                 //Get localStorage information
                 const localStorageItem = localStorage.getItem(itemName);
                 let parsedItem; 
-                //Check if the local storage has information
+                //Check if the local storage had information
                 if(!localStorageItem){
-                  //Append void list 
-                  localStorage.setItem(itemName,JSON.stringify(initialValue));
-                  parsedItem = [];
+                    //Append void list 
+                    localStorage.setItem(itemName,JSON.stringify(initialValue));
+                    parsedItem = [];
                 }else{
-                  //Add the localStorage values to parsedItem
-                  parsedItem = JSON.parse(localStorageItem);
+                    //Add the localStorage values to parsedItem
+                    parsedItem = JSON.parse(localStorageItem);
                 };
                 setItem(parsedItem)
                 setLoading(false)
             }catch(error){
             setError(error)
             }
-        },1000)
-      
+        },3000)
     });
 
     const saveItem = (newItem) => {

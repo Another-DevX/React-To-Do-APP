@@ -1,0 +1,31 @@
+.loading-container{
+    max-width: 420px;
+    min-width: 300px;
+}
+
+.loading-toDo{
+    position: relative;
+    max-width: 420px;
+    min-width: 280px;
+    height: 60px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;    
+    background: linear-gradient(90deg, rgba(172, 172, 172, 0.397), rgba(200, 199, 199, 0.521));
+    background-size: 400% 400%;
+    animation: loadingAnimation 1s ease-in-out infinite;
+}
+
+@keyframes loadingAnimation{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+
+    }
+    100%{
+        background-position: 0% 50%;
+
+    }
+}

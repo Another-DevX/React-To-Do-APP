@@ -1,4 +1,6 @@
 import './App.css';
+import "animate.css"
+
 import React, { useState } from "react";
 import { TodoCounter } from '../TodoCounter/TodoCounter';
 import { TodoItem } from "../TodoItem/TodoItem";
@@ -7,7 +9,11 @@ import { TodoSearch } from "../TodoSearch/TodoSearch";
 import { CreateTodoButton } from "../CreateTodoButton/CreateTodoButton";
 import { Title } from '../Title/title';
 import { TodoContext } from '../../context/TodoContext';
-
+import { Modal } from '../../modal';
+import { TodoForm } from '../TodoForm/TodoForm';
+import { TodosError } from '../TodosError';
+import { TodosLoading } from '../TodosLoading';
+import { TodosEmpty } from '../TodosEmpty';
 
 function AppUI(){
     
@@ -17,6 +23,8 @@ function AppUI(){
         searchedTodos,
         toggleCompletedToDos,
         removeToDos,
+        openModal,
+        setOpenModal
     } = React.useContext(TodoContext);
 
     return(
@@ -25,9 +33,9 @@ function AppUI(){
         <TodoCounter />
         <TodoSearch />
         <TodoList>
-          {error && <p>Don't worry, we will restart the server soon :D</p>}
-          {loading && <p>Loading, keep calm</p>}
-          {(!loading && !searchedTodos.length) && <p>Lets write your first to do</p>}
+          {error && <TodosError error = {error}/>}
+          {loading && <TodosLoading/>}
+          {(!loading && !searchedTodos.length) && <TodosEmpty/>}
 
           {searchedTodos.map(todos => (
           <TodoItem 
@@ -39,6 +47,11 @@ function AppUI(){
           />))
           }
         </TodoList>
+        {openModal && (
+          <Modal>
+            <TodoForm className="animate__animated animate__bounce"/>
+          </Modal>
+        )}
         <CreateTodoButton />
       </div>
     )
