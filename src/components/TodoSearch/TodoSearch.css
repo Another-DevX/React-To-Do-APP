@@ -15,3 +15,7 @@
 
     
 }
+
+.TodoSearch:disabled{
+    opacity: 25%;
+}
